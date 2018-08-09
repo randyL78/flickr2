@@ -11,7 +11,8 @@ import PhotoNotFound from './PhotoNotFound';
  */
 const PhotoList = props =>
   <ul>
-    { (props.photos.length <= 0) ? 
+    { // if there are no photos in the array display the not found page, otherwise show the photo collection
+      (props.photos.length <= 0) ? 
         <PhotoNotFound /> : 
         props.photos.map( photo => 
           <PhotoItem 

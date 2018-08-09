@@ -14,11 +14,11 @@ import ErrorPage from './Components/ErrorPage';
 const App = () => 
   <BrowserRouter>
     <div className="container">
-      <Route exact path = "/" render={() => <Redirect to="/search" />} />
+      <Route exact path = "/" render={() => <Redirect to="/cats" />} />
       <Route path = "/search" component={SearchForm} />
       <Navigation />
       <Switch>
-        <Route exact path = "/search" render={ () => <PhotoContainer searchTerm="celebrities"/> } />
+        <Route exact path = "/search" render={ () => <PhotoContainer searchTerm="cats"/> } />
         <Route path = "/search/:searchTag" render={ props => <PhotoContainer searchTerm={props.match.params.searchTag} />} />
         <Route path = "/cats" render={ () => <PhotoContainer searchTerm="cats"/>} />
         <Route path = "/dogs" render={ () => <PhotoContainer searchTerm="dogs"/>} />
