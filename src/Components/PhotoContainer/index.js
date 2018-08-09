@@ -30,8 +30,6 @@ class PhotoContainer extends Component {
       isLoading: true,
       // array to contain API results
       photos: [],
-      // store search term to compare to
-      searchTerm: ""
     };
   }
 
@@ -58,7 +56,6 @@ class PhotoContainer extends Component {
         this.setState({
           photos: response.data.photos.photo,
           isLoading: false,
-          searchTerm
         });
       })
       .catch( err => console.error(`There was an error parsing and fetching data: ${err}`)); 
