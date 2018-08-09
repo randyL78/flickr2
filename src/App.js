@@ -3,10 +3,10 @@ import React from 'react';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 
 // Custom components
-import SearchForm from './SearchForm';
-import Navigation from './Navigation';
-import PhotoContainer from './PhotoContainer';
-import ErrorPage from './ErrorPage';
+import SearchForm from './Components/SearchForm';
+import Navigation from './Components/Navigation';
+import PhotoContainer from './Components/PhotoContainer';
+import ErrorPage from './Components/ErrorPage';
 
 /**
  * Main App component responsible for handling routes and redirection
