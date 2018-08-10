@@ -24,25 +24,20 @@ const Title = styled.h2 `
   text-transform: capitalize;
 `
 
-
 /**
  * Main container for displaying photos and handling
  * App state
  */
 class PhotoContainer extends Component {
   
-  // Build initial state of the component
-  constructor() {
-    // Changes scope of "this" from Component base class to PhotoContainer class
-    super();
-    this.state = {
+ state = {
       // number of photos to pull and display at a time
       numberOfPhotos: 24,
       isLoading: true,
       // array to contain API results
       photos: [],
     };
-  }
+  
 
   // Search for photos when app first starts
   componentDidMount () {

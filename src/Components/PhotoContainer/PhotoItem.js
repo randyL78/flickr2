@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 /* Styles for sub elements */
 const PhotoLi = styled.li `
-  width: 220px;
+  width: 300px;
   height: 165px;
   overflow: hidden;
   margin: auto
@@ -17,6 +17,7 @@ const PhotoLi = styled.li `
     transform: scale(1.65);
   }
   @media only screen and (min-width: 768px)  { 
+    width: 220px;
     margin: 0 0 15px;
   }
 `;

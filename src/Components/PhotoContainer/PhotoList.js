@@ -15,7 +15,7 @@ const PhotoUl = styled.ul `
   padding-left: 0;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
 `;
 
