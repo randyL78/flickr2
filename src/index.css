@@ -1,34 +1,34 @@
-body {
+/* body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #3f4850;
-}
-h2 {
+} */
+/* h2 {
   font-size: 2em;
   margin: 52px 0 40px;
   text-transform: capitalize;
-}
-ul {
+} */
+/* ul {
   list-style-type: none;
   padding-left: 0;
-}
-a {
+} */
+/* a {
   text-decoration: none;
-}
-.search-form {
+} */
+/* .search-form {
   max-width: 460px;
   display: flex;
   margin: 0 auto 32px;
-}
-.search-form button {
+} */
+/* .search-form button {
   outline: none;
   background-color: #438bbd;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
   cursor: pointer;
-}
-input {
+} */
+/* input {
   font-size: 1em;
   width: 100%;
   background-color: #edeff0;
@@ -37,71 +37,71 @@ input {
   border-right: none;
   border-radius: 0.35em 0 0 0.35em;
   outline: none;
-}
-.main-nav li {
+} */
+/* .main-nav li {
   width: 100%;
   margin-bottom: 1em;
-}
-.main-nav a {
+} */
+/* .main-nav a {
   display: block;
   background: #438bbd;
   border-radius: 3px;
   padding: 5px;
   color: #fff;
-}
-.main-nav .active,
-.main-nav a:hover,
-.search-form button:hover {
+} */
+/* .main-nav .active,
+.main-nav a:hover, */
+/* .search-form button:hover {
   background-color: #275270;
-}
-.photo-container ul {
+} */
+/* .photo-container ul {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   -ms-align-items: flex-start;
   align-items: flex-start;
-}
-.photo-container ul li {
+} */
+/* .photo-container ul li {
   width: 220px;
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
-}
-.photo-container ul img {
+} */
+/* .photo-container ul img {
   width: 100%;
   transform: scale(1.25);
   transition: transform 1.25s;
-}
-.photo-container li:hover img {
+} */
+/* .photo-container li:hover img {
   transform: scale(1.65);
-}
-.photo-container .not-found {
+} */
+/* .photo-container .not-found {
   width: 100%;
-}
+} */
 
-.icn--loading {
+/* .icn--loading {
   background: url("./images/loading.gif") center no-repeat ;
   margin-left: auto;
   margin-right: auto;
   height: 50px;
   width:  50px;
   background-size: cover;
-}
+} */
 
 @media only screen and (max-width: 767px)  {
-  body {
+  /* body {
     padding-top: 2em;
-  }
-  .photo-container li {
+  } */
+  /* .photo-container li {
     margin: auto;
-  }
+  } */
 }
 
 @media only screen and (min-width: 768px)  {
-  body {
+  /* body {
     padding-top: 4em;
-  }
-  .container {
+  } */
+  /* .container {
     max-width: 960px;
     margin: auto;
   }
@@ -112,5 +112,5 @@ input {
   .main-nav li {
     margin: 10px;
     width: 100px;
-  }
+  } */
 }

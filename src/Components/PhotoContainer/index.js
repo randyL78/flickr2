@@ -3,8 +3,10 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+// Library for styling React components inside of component itself
+import styled from 'styled-components';
 
-// Custom compnents
+// Custom components
 /**
  * Please place your config.js file in the "src" folder
  * and give it a default export of apiKey to get this to work
@@ -12,6 +14,15 @@ import axios from 'axios';
 import apiKey from '../../config';
 import PhotoList from './PhotoList';
 import Loading from './Loading';
+
+/* Create styles for title h2 */
+const Title = styled.h2 `
+  font-family: 'Open Sans', sans-serif;
+  color: #3f4850;
+  font-size: 2em;
+  margin: 52px 0 40px;
+  text-transform: capitalize;
+`
 
 
 /**
@@ -63,16 +74,14 @@ class PhotoContainer extends Component {
 
   render () {
     return (
-      <div>
-        <div className="photo-container">
-          <h2>{this.props.searchTerm}</h2>
-          {
-            /* if axios is loading photos still, show loading screen otherwise show the photos */
-            (this.state.isLoading) ? 
-            <Loading /> : 
-            <PhotoList photos={this.state.photos} />
-          }
-        </div>
+      <div className="photo-container">
+        <Title>{this.props.searchTerm}</Title>
+        {
+          /* if axios is loading photos still, show loading screen otherwise show the photos */
+          (this.state.isLoading) ? 
+          <Loading /> : 
+          <PhotoList photos={this.state.photos} />
+        }
       </div>
     )
   }
