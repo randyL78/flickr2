@@ -13,12 +13,14 @@ const PhotoLi = styled.li `
   overflow: hidden;
   margin: auto
   margin-bottom: 15px;
+  border: 2px solid #438bbd; 
   &:hover img {
     transform: scale(1.65);
   }
   @media only screen and (min-width: 768px)  { 
     width: 220px;
     margin: 0 0 15px;
+    box-shadow: 2px 2px 2px 1px #275270;
   }
 `;
 
