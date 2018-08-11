@@ -37,10 +37,10 @@ const Image = styled.img `
 const PhotoItem = props =>
   <PhotoLi>
     <Image src={props.photoUrl} alt="" />
-  </PhotoLi>
+  </PhotoLi>;
 
-  PhotoItem.proptypes = {
-    photoUrl: PropTypes.string.isRequired
-  }
+PhotoItem.proptypes = {
+  photoUrl: PropTypes.string.isRequired
+};
 
-  export default PhotoItem;
+export default PhotoItem;

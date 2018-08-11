@@ -32,7 +32,7 @@ const App = () =>
     <Container>
       <Route exact path = "/" render={() => <Redirect to="/cats" />} />
       <Route path = "/search" component={SearchForm} />
-      <Navigation />
+      <Navigation links={['Cats', 'Dogs', 'Computers', 'Search']} />
       <Switch>
         <Route exact path = "/search" render={ () => <PhotoContainer searchTerm="cats"/> } />
         <Route path = "/search/:searchTag" render={ props => <PhotoContainer searchTerm={props.match.params.searchTag} />} />
