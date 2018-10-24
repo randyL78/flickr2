@@ -6,9 +6,9 @@ import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import styled from 'styled-components';
 
 // Custom components
-import SearchForm from './Components/SearchForm';
-import Navigation from './Components/Navigation';
-import PhotoContainer from './Components/PhotoContainer';
+import SearchForm from './Components/SearchForm/SearchForm';
+import Navigation from './Components/Navigation/Nav';
+import PhotoContainer from './Components/PhotoContainer/PhotoContainer';
 import ErrorPage from './Components/ErrorPage';
 
 /* Create styles for div.container elements */
