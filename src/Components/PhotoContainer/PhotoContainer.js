@@ -1,7 +1,6 @@
 // React libraries
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
 // Library for styling React components inside of component itself
 import styled from 'styled-components';
@@ -11,9 +10,20 @@ import styled from 'styled-components';
  * Please place your config.js file in the "src" folder
  * and give it a default export of apiKey to get this to work
  */
-import apiKey from '../../config';
-import PhotoList from './PhotoList';
 import Loading from './Loading';
+import PhotoItem from './PhotoItem';
+import PhotoNotFound from './PhotoNotFound';
+
+/* Styles for sub elements */
+const PhotoUl = styled.ul `
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+`;
+
 
 /* Create styles for title h2 */
 const Title = styled.h2 `
@@ -30,26 +40,15 @@ const Title = styled.h2 `
  */
 class PhotoContainer extends Component {
   
- state = {
-    // number of photos to pull and display at a time
-    numberOfPhotos: 12,
-    isLoading: true,
-    // array to contain API results
-    photos: [],
-  };
-  
-
-  // Search for photos when app first starts
-  componentDidMount () {
-    this.searchFlickr(this.props.searchTerm);
+  // When component first loads, call the searchFlickr function
+  componentDidMount() {
+    this.props.searchFlickr(this.props.searchTerm);
   }
 
   // When component updates compare the old and new search term, if they are the same don't re-search flickr
   componentDidUpdate(prevProps) {
     if (prevProps.searchTerm !== this.props.searchTerm) {
-      // show loading screen while search is being done
-      this.setState({isLoading: true})
-      this.searchFlickr(this.props.searchTerm);
+      this.props.searchFlickr(this.props.searchTerm);
     }
   }
 
@@ -60,14 +59,26 @@ class PhotoContainer extends Component {
   }
 
   render () {
+    let props = this.props;
     return (
       <div className="photo-container">
         <Title>{this.props.searchTerm}</Title>
-        {
+        { 
           /* if axios is loading photos still, show loading screen otherwise show the photos */
           (this.props.isLoading) ? 
           <Loading /> : 
-          <PhotoList photos={this.props.photos} />
+          <PhotoUl>
+            { // if there are no photos in the array display the not found page, otherwise show the photo collection
+              (props.photos.length <= 0) ? 
+                <PhotoNotFound /> : 
+                props.photos.map( photo => 
+                  <PhotoItem 
+                    key={photo.id} 
+                    photoUrl={
+                    `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_m.jpg`
+                    }/> )
+            }
+          </PhotoUl>
         }
       </div>
     )

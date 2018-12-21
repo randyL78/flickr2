@@ -46,6 +46,7 @@ class App extends Component {
     photos: [],
   };
 
+
   // search flickr based on the search term
   searchFlickr = searchTerm => {
     if (!this.state.isLoading) {
