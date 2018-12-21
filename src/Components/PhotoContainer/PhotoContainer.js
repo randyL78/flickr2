@@ -31,12 +31,12 @@ const Title = styled.h2 `
 class PhotoContainer extends Component {
   
  state = {
-      // number of photos to pull and display at a time
-      numberOfPhotos: 24,
-      isLoading: true,
-      // array to contain API results
-      photos: [],
-    };
+    // number of photos to pull and display at a time
+    numberOfPhotos: 12,
+    isLoading: true,
+    // array to contain API results
+    photos: [],
+  };
   
 
   // Search for photos when app first starts
@@ -56,15 +56,7 @@ class PhotoContainer extends Component {
   // search flickr based on the search term
   searchFlickr (searchTerm) {
     // Use axios to pull photos from flickr with tags passed down from the url
-    axios
-      .get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=${this.state.numberOfPhotos}&page=1&format=json&nojsoncallback=1`)
-      .then( response => {
-        this.setState({
-          photos: response.data.photos.photo,
-          isLoading: false,
-        });
-      })
-      .catch( err => console.error(`There was an error parsing and fetching data: ${err}`)); 
+    this.props.searchFlickr(searchTerm);
   }
 
   render () {
@@ -73,9 +65,9 @@ class PhotoContainer extends Component {
         <Title>{this.props.searchTerm}</Title>
         {
           /* if axios is loading photos still, show loading screen otherwise show the photos */
-          (this.state.isLoading) ? 
+          (this.props.isLoading) ? 
           <Loading /> : 
-          <PhotoList photos={this.state.photos} />
+          <PhotoList photos={this.props.photos} />
         }
       </div>
     )
