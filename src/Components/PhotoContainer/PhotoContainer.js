@@ -52,12 +52,6 @@ class PhotoContainer extends Component {
     }
   }
 
-  // search flickr based on the search term
-  searchFlickr (searchTerm) {
-    // Use axios to pull photos from flickr with tags passed down from the url
-    this.props.searchFlickr(searchTerm);
-  }
-
   render () {
     let props = this.props;
     return (
